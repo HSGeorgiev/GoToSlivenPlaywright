@@ -10,7 +10,6 @@ test('Click About Button', async ({ page }) =>{
     const goToSliven = new GoToSliven();
 
     await page.goto(goToSliven.baseUrl);
-    await page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "about-us")]').click();
     await basePage.aboutMenuLink.click();
-    await expect(page.url()).toBe('https://gotosliven.com/about-us/');
+    expect(page.url()).toBe('https://gotosliven.com/about-us/');
 });
