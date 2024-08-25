@@ -1,6 +1,6 @@
 // Global Constances
 
-exports.GoToSliven = class GoToSliven{
+export class GoToSliven{
 
     constructor(){
 
