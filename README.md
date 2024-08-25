@@ -1,7 +1,9 @@
 # GoToSlivenPlaywright
 GoToSliven.com web site e2e tests
 
-# Used technologies:
+https://gotosliven.com/
+
+# Technologies:
 - Playwright;
 - JavaScript;
 - NodeJS
