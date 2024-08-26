@@ -97,5 +97,18 @@ describe("e2e tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/360-virtual-walk/');
         });
 
+        test('Click 3d models Button', async ({ page }) =>{
+
+            const basePage = new BasePage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await basePage.touristAttractionsMenuLink.hover();
+            await basePage.modelsMenuLink.click();
+            const title = await page.title();
+            expect(title).toBe("3D Models – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/3d-models/');
+        });
+
     });
 });

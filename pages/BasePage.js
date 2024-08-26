@@ -9,6 +9,7 @@ export class BasePage{
         this.friendOfSlivenMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/become-a-friend-of-sliven/")]');
         this.videoMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/video/")]');
         this.virtualWalkMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/360-virtual-walk/")]');
+        this.modelsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/3d-models/")]');
     }
 
 }
