@@ -84,5 +84,18 @@ describe("e2e tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/video/');
         });
 
+        test('Click 360 Virtual Walk Button', async ({ page }) =>{
+
+            const basePage = new BasePage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await basePage.touristAttractionsMenuLink.hover();
+            await basePage.virtualWalkMenuLink.click();
+            const title = await page.title();
+            expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/360-virtual-walk/');
+        });
+
     });
 });
