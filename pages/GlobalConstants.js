@@ -4,7 +4,7 @@ export class GoToSliven{
 
     constructor(){
 
-        this.baseUrl = 'https://gotosliven.com/';
+        this.baseUrl = 'https://gotosliven.com';
 
     }
 }
