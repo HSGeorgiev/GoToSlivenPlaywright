@@ -40,7 +40,22 @@ describe("e2e tests", () => {
 
             await page.goto(goToSliven.baseUrl);
             await basePage.aboutMenuLink.click();
+            const title = await page.title();
+            expect(title).toBe("About us – gotosliven Touristic Info Site");
             expect(page.url()).toBe('https://gotosliven.com/about-us/');
+        });
+
+        test('Click Become Friend Of Sliven Button', async ({ page }) =>{
+
+            const basePage = new BasePage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl);
+            await basePage.touristAttractionsMenuLink.hover();
+            await basePage.friendOfSlivenMenuLink.click();
+            const title = await page.title();
+            expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
+            expect(page.url()).toBe('https://gotosliven.com/become-a-friend-of-sliven/');
         });
     });
 });
