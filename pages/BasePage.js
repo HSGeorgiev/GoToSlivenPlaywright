@@ -24,6 +24,11 @@ export class BasePage{
         this.hutCabinsHomesnMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/hut-cabins/")]');
         this.campingsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/campings/")]');
         this.usefulMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/useful/")]');
+        // Restaurants SumMenu Elements
+        this.restaurantsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/restaurants/")]');
+        this.pizzeriasMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/pizzerias/")]');
+        this.fastFoodMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/fast-food-restaurants/")]');
+        
     }
 
 }

@@ -239,5 +239,49 @@ describe("e2e tests", () => {
 
         });
 
+        describe('Restaurants Menu Tests', () => {
+
+            test('Click Restaurants Button', async ({ page }) =>{
+
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.restaurantsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Restaurants – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/restaurants/');
+            });
+    
+            test('Click Pizzerias Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.restaurantsMenuLink.hover();
+                await basePage.pizzeriasMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Pizzerias – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/pizzerias/');
+            });
+
+            test('Click Fast Food restaurants Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.restaurantsMenuLink.hover();
+                await basePage.fastFoodMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Fast Food Restaurants – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/fast-food-restaurants/');
+            });
+
+           
+
+        });
+
     });
 });
