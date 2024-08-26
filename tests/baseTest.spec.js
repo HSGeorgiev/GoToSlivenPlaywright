@@ -184,8 +184,58 @@ describe("e2e tests", () => {
                 expect(title).toBe("Guest House – gotosliven Touristic Info Site");
                 expect(page.url()).toBe(goToSliven.baseUrl + '/guest-house/');
             });
+
+            test('Click Holiday Homes Button', async ({ page }) =>{
     
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.accommodationMenuLink.hover();
+                await basePage.holidayHomesnMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Holiday Homes – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/holiday-homes/');
+            });
+
+            test('Click Hut & Cabins Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.accommodationMenuLink.hover();
+                await basePage.hutCabinsHomesnMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Hut & Cabins – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/hut-cabins/');
+            });
+    
+            test('Click Campings Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.accommodationMenuLink.hover();
+                await basePage.campingsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Campings – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/campings/');
+            });
            
+            test('Click Useful Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.accommodationMenuLink.hover();
+                await basePage.usefulMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Useful – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/useful/');
+            });
 
         });
 
