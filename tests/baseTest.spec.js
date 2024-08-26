@@ -1,5 +1,3 @@
-//const { test, expect } = require('@playwright/test');
-
 import { test, describe, beforeEach, afterEach, beforeAll, afterAll, expect } from '@playwright/test';
 import { chromium } from 'playwright';
 import { GoToSliven } from '../pages/GlobalConstants.js';
@@ -34,81 +32,107 @@ describe("e2e tests", () => {
     
     describe("Top Menu Targets Tests", () => {
 
-        test('Click About Button', async ({ page }) =>{
+        describe('Avout Us Menu Tests', () => {
 
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
+            test('Click About Button', async ({ page }) =>{
 
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.aboutMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("About us – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/about-us/');
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.aboutMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("About us – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/about-us/');
+            });
         });
 
-        test('Click Tourist Attractions Button', async ({ page }) =>{
+        describe('Tourist Attractions Menu Tests', () => {
 
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
+            test('Click Tourist Attractions Button', async ({ page }) =>{
 
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.touristAttractionsMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("Tourist Attractions – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/tourist-attractions/');
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.touristAttractionsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Tourist Attractions – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/tourist-attractions/');
+            });
+    
+            test('Click Become Friend Of Sliven Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.touristAttractionsMenuLink.hover();
+                await basePage.friendOfSlivenMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/become-a-friend-of-sliven/');
+            });
+    
+            test('Click Video Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.touristAttractionsMenuLink.hover();
+                await basePage.videoMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Video – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/video/');
+            });
+    
+            test('Click 360 Virtual Walk Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.touristAttractionsMenuLink.hover();
+                await basePage.virtualWalkMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/360-virtual-walk/');
+            });
+    
+            test('Click 3d models Button', async ({ page }) =>{
+    
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    ``
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.touristAttractionsMenuLink.hover();
+                await basePage.modelsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("3D Models – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/3d-models/');
+            });
+
         });
 
-        test('Click Become Friend Of Sliven Button', async ({ page }) =>{
+        describe('Interactive Map Menu Tests', () => {
 
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
-``
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.touristAttractionsMenuLink.hover();
-            await basePage.friendOfSlivenMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/become-a-friend-of-sliven/');
+            test('Click Map Button', async ({ page }) =>{
+
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.mapMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Interactive Map of Sliven – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/interactive-map-of-sliven/');
+            });
         });
 
-        test('Click Video Button', async ({ page }) =>{
 
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
-``
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.touristAttractionsMenuLink.hover();
-            await basePage.videoMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("Video – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/video/');
-        });
 
-        test('Click 360 Virtual Walk Button', async ({ page }) =>{
-
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
-``
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.touristAttractionsMenuLink.hover();
-            await basePage.virtualWalkMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/360-virtual-walk/');
-        });
-
-        test('Click 3d models Button', async ({ page }) =>{
-
-            const basePage = new BasePage(page);
-            const goToSliven = new GoToSliven();
-``
-            await page.goto(goToSliven.baseUrl + '/');
-            await basePage.touristAttractionsMenuLink.hover();
-            await basePage.modelsMenuLink.click();
-            const title = await page.title();
-            expect(title).toBe("3D Models – gotosliven Touristic Info Site");
-            expect(page.url()).toBe(goToSliven.baseUrl + '/3d-models/');
-        });
+      
 
     });
 });
