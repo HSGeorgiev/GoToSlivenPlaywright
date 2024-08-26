@@ -283,5 +283,21 @@ describe("e2e tests", () => {
 
         });
 
+        describe('Contact Us Menu Tests', () => {
+
+            test('Click Contact Button', async ({ page }) =>{
+
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.contactUsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Contact us – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/contact-us/');
+            });
+        });
+
+
     });
 });
