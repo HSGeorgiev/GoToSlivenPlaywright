@@ -10,7 +10,9 @@ export class BasePage{
         this.videoMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/video/")]');
         this.virtualWalkMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/360-virtual-walk/")]');
         this.modelsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/3d-models/")]');
-        this.mapMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/interactive-map-of-sliven")]');
+        this.mapMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/interactive-map-of-sliven/")]');
+        this.eventsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/event-directory/")]');
+
     }
 
 }

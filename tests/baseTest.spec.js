@@ -130,6 +130,23 @@ describe("e2e tests", () => {
             });
         });
 
+        describe('Events Menu Tests', () => {
+
+            test('Click Events Button', async ({ page }) =>{
+
+                const basePage = new BasePage(page);
+                const goToSliven = new GoToSliven();
+    
+                await page.goto(goToSliven.baseUrl + '/');
+                await basePage.eventsMenuLink.click();
+                const title = await page.title();
+                expect(title).toBe("Events – gotosliven Touristic Info Site");
+                expect(page.url()).toBe(goToSliven.baseUrl + '/event-directory/');
+            });
+        });
+
+      
+
 
 
       
