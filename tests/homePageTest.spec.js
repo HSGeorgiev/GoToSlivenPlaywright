@@ -94,6 +94,57 @@ describe("e2e tests", () => {
 
         });
 
+        test('Verify if search functionality of the map works', async ({ page }) => {
+
+            const homePage = new HomePage(page);
+            const goToSliven = new GoToSliven();
+
+            
+
+            let queriesResponses = [
+                {
+                    query: 'Hadzhi Dimitar',
+                    response: 'Hadzhi Dimitar House-Museum'},
+                {
+                    query: 'Dobri Chintulov',
+                    response: 'Dobri Chintulov House-Museum'},   
+                {
+                    query: 'Kushbunar',
+                    response: 'Historical Place - Kushbunar'},   
+                {
+                    query: 'Kaloyanovo',
+                    response: 'Tomb - Kaloyanovo'},   
+                {
+                    query: 'Panayot Hitov',
+                    response: 'Panayot Hitov Monument'},                     
+                  
+            ];
+
+            for (let i = 0; i < queriesResponses.length; i++) {
+
+                await page.goto(goToSliven.baseUrl + homePage.path);
+
+                    let query = queriesResponses[i].query;
+                    let response = queriesResponses[i].response;
+                    await homePage.mapSearchInput.fill(query);
+                    await homePage.mapSearchButton.click();
+                    let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
+                    console.log(query);
+                    console.log(firstResultTitle.trim());
+                    console.log(response);
+                    expect(firstResultTitle.trim()).toBe(response);
+                // Next query
+
+            }
+
+
+
+
+
+
+
+        });
+
 
 
     });
