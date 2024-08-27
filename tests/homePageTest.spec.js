@@ -76,6 +76,7 @@ describe("e2e tests", () => {
                 //homePage.bookingSubmitButton.click()
                 nPage.click('//input[@class="b_submitButton"]') 
               ]);
+              
 
             
             
@@ -88,6 +89,9 @@ describe("e2e tests", () => {
             const expectedPartUrlSliven = '%D0%A1%D0%BB%D0%B8%D0%B2%D0%B5%D0%BD&'; //it seems to be 'Сливен' in the url
             expect(newPageURL).toEqual(expect.stringContaining(expectedPartUrlBooking));
             expect(newPageURL).toEqual(expect.stringContaining(expectedPartUrlSliven));
+
+            await nPage.close();
+            await browserContext.close();
 
 
         });
