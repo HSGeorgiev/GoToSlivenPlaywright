@@ -57,6 +57,40 @@ describe("e2e tests", () => {
                 expect(currentText).toBe(homePage.h3[i]);
             }
 
+        });
+
+        test('Verify if Booking Serch Form works', async ({ page }) => {
+
+            const homePage = new HomePage(page);
+            const goToSliven = new GoToSliven();
+
+            
+            // Just to check if it works we need to create a new context 
+            // and a new page inside this method.
+            // It should be fixed later...
+            const browserContext = await browser.newContext();
+            const nPage = await browserContext.newPage();
+
+            await nPage.goto(goToSliven.baseUrl + homePage.path);
+
+            const [newPage] = await Promise.all([
+                browserContext.waitForEvent('page'),
+                //homePage.bookingSubmitButton.click()
+                nPage.click('//input[@class="b_submitButton"]') 
+              ]);
+
+            
+            
+              // Wait for the new page to load
+            await newPage.waitForLoadState();
+
+            // Verify the URL of the new page
+            const newPageURL = newPage.url();
+            const expectedPartUrlBooking = 'www.booking.com/searchresults.html?';
+            const expectedPartUrlSliven = '%D0%A1%D0%BB%D0%B8%D0%B2%D0%B5%D0%BD&'; //it seems to be 'Сливен' in the url
+            expect(newPageURL).toEqual(expect.stringContaining(expectedPartUrlBooking));
+            expect(newPageURL).toEqual(expect.stringContaining(expectedPartUrlSliven));
+
 
         });
 
