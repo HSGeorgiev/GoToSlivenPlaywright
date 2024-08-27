@@ -30,6 +30,8 @@ export class BasePage{
         this.fastFoodMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/fast-food-restaurants/")]');
         // Contact SumMenu Elements
         this.contactUsMenuLink = page.locator('//ul[@id="menu-primary-eng"]//a[contains(@href, "/contact-us/")]');
+
+
         
     }
 
