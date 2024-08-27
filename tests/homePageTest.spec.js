@@ -3,7 +3,6 @@ import { chromium } from 'playwright';
 import { GoToSliven } from '../pages/GlobalConstants.js';
 import { HomePage } from '../pages/HomePage.js';
 
-
 let browser;
 let context;
 let page;
@@ -31,7 +30,6 @@ describe("e2e tests", () => {
 
 
     describe("Home Page Elements Tests", () => {
-
 
         test('Home Page Title', async ({ page }) => {
 
@@ -98,8 +96,6 @@ describe("e2e tests", () => {
 
             const homePage = new HomePage(page);
             const goToSliven = new GoToSliven();
-
-            
 
             let queriesResponses = [
                 {
