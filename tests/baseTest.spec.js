@@ -1,7 +1,7 @@
 import { test, describe, beforeEach, afterEach, beforeAll, afterAll, expect } from '@playwright/test';
 import { chromium } from 'playwright';
-import { GoToSliven } from '../pages/GlobalConstants.js';
-import { BasePage } from '../pages/BasePage.js';
+import { GoToSliven } from '../Globals/GlobalConstants.js';
+import { BasePageTopMenu } from '../pages/BasePageTopMenu.js';
 
 
 let browser;
@@ -36,7 +36,7 @@ describe("e2e tests", () => {
 
             test('Click About Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -51,7 +51,7 @@ describe("e2e tests", () => {
 
             test('Click Tourist Attractions Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -63,7 +63,7 @@ describe("e2e tests", () => {
     
             test('Click Become Friend Of Sliven Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -76,7 +76,7 @@ describe("e2e tests", () => {
     
             test('Click Video Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -89,7 +89,7 @@ describe("e2e tests", () => {
     
             test('Click 360 Virtual Walk Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -102,7 +102,7 @@ describe("e2e tests", () => {
     
             test('Click 3d models Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -119,7 +119,7 @@ describe("e2e tests", () => {
 
             test('Click Map Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -134,7 +134,7 @@ describe("e2e tests", () => {
 
             test('Click Events Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -149,7 +149,7 @@ describe("e2e tests", () => {
 
             test('Click Accommodation Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -161,7 +161,7 @@ describe("e2e tests", () => {
     
             test('Click Hotels Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -174,7 +174,7 @@ describe("e2e tests", () => {
 
             test('Click Guest House Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -187,7 +187,7 @@ describe("e2e tests", () => {
 
             test('Click Holiday Homes Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -200,7 +200,7 @@ describe("e2e tests", () => {
 
             test('Click Hut & Cabins Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -213,7 +213,7 @@ describe("e2e tests", () => {
     
             test('Click Campings Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -226,7 +226,7 @@ describe("e2e tests", () => {
            
             test('Click Useful Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -243,7 +243,7 @@ describe("e2e tests", () => {
 
             test('Click Restaurants Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');
@@ -255,7 +255,7 @@ describe("e2e tests", () => {
     
             test('Click Pizzerias Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -268,7 +268,7 @@ describe("e2e tests", () => {
 
             test('Click Fast Food restaurants Button', async ({ page }) =>{
     
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     ``
                 await page.goto(goToSliven.baseUrl + '/');
@@ -287,7 +287,7 @@ describe("e2e tests", () => {
 
             test('Click Contact Button', async ({ page }) =>{
 
-                const basePage = new BasePage(page);
+                const basePage = new BasePageTopMenu(page);
                 const goToSliven = new GoToSliven();
     
                 await page.goto(goToSliven.baseUrl + '/');

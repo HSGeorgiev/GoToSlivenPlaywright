@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-export class BasePage{
+export class BasePageTopMenu{
     
     constructor(page){
         this.page = page;

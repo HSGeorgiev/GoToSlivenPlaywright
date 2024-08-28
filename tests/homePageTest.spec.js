@@ -1,6 +1,6 @@
 import { test, describe, beforeEach, afterEach, beforeAll, afterAll, expect } from '@playwright/test';
 import { chromium } from 'playwright';
-import { GoToSliven } from '../pages/GlobalConstants.js';
+import { GoToSliven } from '../Globals/GlobalConstants.js';
 import { HomePage } from '../pages/HomePage.js';
 
 let browser;
@@ -138,14 +138,7 @@ describe("e2e tests", () => {
             }
 
 
-
-
-
-
-
         });
-
-
 
     });
 });
