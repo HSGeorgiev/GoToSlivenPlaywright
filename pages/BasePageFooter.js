@@ -10,7 +10,7 @@ export class BasePageFooter{
         this.interactiveMapLinkFooter = page.locator('//footer//a[contains(@href, "interactive-map-of-sliven")]');
         this.eventsLinkFooter = page.locator('//footer//a[contains(@href, "event-directory")]');
         this.accomodationLinkFooter = page.locator('//footer//a[contains(@href, "accommodation")]');
-        this.restaurantLinkFooter = page.locator('//footer//a[contains(@href, "restaurants")]');
+        this.restaurantsLinkFooter = page.locator('//footer//a[contains(@href, "restaurants")]');
         this.contactusLinkFooter = page.locator('//footer//a[contains(@href, "contact-us")]');
     }
 

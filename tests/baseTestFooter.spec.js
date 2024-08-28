@@ -92,5 +92,17 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/accommodation/');
         });
 
+        test('Click Restaurants Link Test', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await footer.restaurantsLinkFooter.click();
+            const title = await page.title();
+            expect(title).toBe("Restaurants – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/restaurants/');
+        });
+
     });
 });
