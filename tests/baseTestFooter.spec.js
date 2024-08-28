@@ -44,7 +44,7 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/about-us/');
         });
 
-        test('Click Tourist Attraction Link', async ({ page }) =>{
+        test('Click Tourist Attraction Link Test', async ({ page }) =>{
     
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
@@ -56,7 +56,7 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/tourist-attractions/');
         });
 
-        test('Click Map Link', async ({ page }) =>{
+        test('Click Map Link Test', async ({ page }) =>{
     
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
@@ -66,6 +66,18 @@ describe("Footer tests", () => {
             const title = await page.title();
             expect(title).toBe("Interactive Map of Sliven – gotosliven Touristic Info Site");
             expect(page.url()).toBe(goToSliven.baseUrl + '/interactive-map-of-sliven/');
+        });
+
+        test('Click Events Link Test', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await footer.eventsLinkFooter.click();
+            const title = await page.title();
+            expect(title).toBe("Events – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/event-directory/');
         });
 
     });
