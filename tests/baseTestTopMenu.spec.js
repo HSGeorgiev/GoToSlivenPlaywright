@@ -10,7 +10,7 @@ let page;
 
 
 
-describe("e2e tests", () => {
+describe("Top mwnu tests", () => {
     beforeAll(async () => {
         browser = await chromium.launch();
     });
