@@ -80,5 +80,17 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/event-directory/');
         });
 
+        test('Click Accomodation Link Test', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await footer.accomodationLinkFooter.click();
+            const title = await page.title();
+            expect(title).toBe("Accommodation – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/accommodation/');
+        });
+
     });
 });
