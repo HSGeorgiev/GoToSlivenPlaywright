@@ -104,5 +104,17 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/restaurants/');
         });
 
+        test('Click Contact Us Link Test', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+            await footer.contactusLinkFooter.click();
+            const title = await page.title();
+            expect(title).toBe("Contact us – gotosliven Touristic Info Site");
+            expect(page.url()).toBe(goToSliven.baseUrl + '/contact-us/');
+        });
+
     });
 });
