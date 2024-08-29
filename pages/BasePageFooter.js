@@ -25,6 +25,14 @@ export class BasePageFooter{
             'Touristic Info Site of Sliven. Sites, Places, Hotels, Restaurants, attraction in Sliven City.',
             'Social media :',
         ]
+        // Footer Get In Touch //ul//li elements
+        this.getInTouchLiFooter = page.locator('//footer//ul//li[@class="elementor-icon-list-item elementor-inline-item"]');
+        this.getInTouchFooterExpected = [
+            'Tsar Osvoboditel Blvd. 1',
+            '+359 44 611 123',
+            'tourism.sliven@gmail.com',
+        ]
+
     }
 
 }

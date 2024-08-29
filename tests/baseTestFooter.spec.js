@@ -60,6 +60,22 @@ describe("Footer tests", () => {
                 expect(currentContainer).toBe(footer.containersExpected[i]);
             }
         });
+
+        test('Check if Get In Touch Li Elements are presented', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+
+            for (let i = 0; i < footer.getInTouchFooterExpected.length; i++){
+                let currentLiElement = await footer.getInTouchLiFooter.nth(i).innerText();
+                console.log(currentLiElement);
+                console.log(footer.containersExpected[i]);
+                expect(footer.getInTouchLiFooter.nth(i)).toBeVisible;
+                expect(currentLiElement).toBe(footer.getInTouchFooterExpected[i]);
+            }
+        });
     });
 
     
