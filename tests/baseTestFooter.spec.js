@@ -36,7 +36,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
 
             for (let i = 0; i < footer.h5Expected.length; i++){
                 let currentHeading = await footer.h5Headings.nth(i).innerText();
@@ -50,7 +50,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
 
             for (let i = 0; i < footer.containersExpected.length; i++){
                 let currentContainer = await footer.textContainersFooter.nth(i).innerText();
@@ -66,7 +66,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
 
             for (let i = 0; i < footer.getInTouchFooterExpected.length; i++){
                 let currentLiElement = await footer.getInTouchLiFooter.nth(i).innerText();
@@ -86,7 +86,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.aboutLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("About us – gotosliven Touristic Info Site");
@@ -98,7 +98,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.touristAttractionLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Tourist Attractions – gotosliven Touristic Info Site");
@@ -110,7 +110,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.interactiveMapLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Interactive Map of Sliven – gotosliven Touristic Info Site");
@@ -122,7 +122,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.eventsLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Events – gotosliven Touristic Info Site");
@@ -134,7 +134,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.accomodationLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Accommodation – gotosliven Touristic Info Site");
@@ -146,7 +146,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.restaurantsLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Restaurants – gotosliven Touristic Info Site");
@@ -158,7 +158,7 @@ describe("Footer tests", () => {
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
 ``
-            await page.goto(goToSliven.baseUrl + '/');
+            await page.goto(goToSliven.baseUrl + footer.path);
             await footer.contactusLinkFooter.click();
             const title = await page.title();
             expect(title).toBe("Contact us – gotosliven Touristic Info Site");
