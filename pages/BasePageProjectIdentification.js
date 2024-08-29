@@ -14,9 +14,6 @@ export class BasePageProjectIdentification{
         this.fundFUGLogo = page.locator('//img[contains(@src, "Фонд_за_Устойчиви_Градове")]');
         this.programOPRRLogo = page.locator('//img[contains(@src, "Региони_В_Растеж")]');
         this.fundOfFundsLogo = page.locator('//img[contains(@src, "Фонд_на_Фондовете")]');
-
-       
-        
     }
 
 }

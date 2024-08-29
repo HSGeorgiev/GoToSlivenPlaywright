@@ -126,9 +126,9 @@ describe("e2e tests", () => {
                     await homePage.mapSearchInput.fill(query);
                     await homePage.mapSearchButton.click();
                     let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
-                    console.log(query);
-                    console.log(firstResultTitle.trim());
-                    console.log(response);
+                    // console.log(query);
+                    // console.log(firstResultTitle.trim());
+                    // console.log(response);
                     expect(firstResultTitle.trim()).toBe(response);
                 // Next query
 

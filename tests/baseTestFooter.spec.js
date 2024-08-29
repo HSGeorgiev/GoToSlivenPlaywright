@@ -54,8 +54,8 @@ describe("Footer tests", () => {
 
             for (let i = 0; i < footer.containersExpected.length; i++){
                 let currentContainer = await footer.textContainersFooter.nth(i).innerText();
-                console.log(currentContainer);
-                console.log(footer.containersExpected[i]);
+                // console.log(currentContainer);
+                // console.log(footer.containersExpected[i]);
                 expect(footer.textContainersFooter.nth(i)).toBeVisible;
                 expect(currentContainer).toBe(footer.containersExpected[i]);
             }
@@ -70,8 +70,8 @@ describe("Footer tests", () => {
 
             for (let i = 0; i < footer.getInTouchFooterExpected.length; i++){
                 let currentLiElement = await footer.getInTouchLiFooter.nth(i).innerText();
-                console.log(currentLiElement);
-                console.log(footer.containersExpected[i]);
+                // console.log(currentLiElement);
+                // console.log(footer.containersExpected[i]);
                 expect(footer.getInTouchLiFooter.nth(i)).toBeVisible;
                 expect(currentLiElement).toBe(footer.getInTouchFooterExpected[i]);
             }
