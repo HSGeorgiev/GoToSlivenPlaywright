@@ -19,6 +19,12 @@ export class BasePageFooter{
         this.accomodationLinkFooter = page.locator('//footer//a[contains(@href, "accommodation")]');
         this.restaurantsLinkFooter = page.locator('//footer//a[contains(@href, "restaurants")]');
         this.contactusLinkFooter = page.locator('//footer//a[contains(@href, "contact-us")]');
+        // Footer Text Containers Elements
+        this.textContainersFooter = page.locator('//footer//div[@class="elementor-widget-container"]//p');
+        this.containersExpected = [
+            'Touristic Info Site of Sliven. Sites, Places, Hotels, Restaurants, attraction in Sliven City.',
+            'Social media :',
+        ]
     }
 
 }

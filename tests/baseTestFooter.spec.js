@@ -29,9 +29,9 @@ describe("Footer tests", () => {
         await context.close();
     });
 
-    describe("Verify h5 level headings in the footer", () => {
+    describe("Verify Footer Non-link Element Presented", () => {
 
-        test('Check if headings are presented', async ({ page }) =>{
+        test('Check if h5 headings are presented', async ({ page }) =>{
     
             const footer = new BasePageFooter(page);
             const goToSliven = new GoToSliven();
@@ -42,6 +42,22 @@ describe("Footer tests", () => {
                 let currentHeading = await footer.h5Headings.nth(i).innerText();
                 expect(footer.h5Headings.nth(i)).toBeVisible;
                 expect(currentHeading).toBe(footer.h5Expected[i]);
+            }
+        });
+
+        test('Check if text contaners are presented', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+
+            for (let i = 0; i < footer.containersExpected.length; i++){
+                let currentContainer = await footer.textContainersFooter.nth(i).innerText();
+                console.log(currentContainer);
+                console.log(footer.containersExpected[i]);
+                expect(footer.textContainersFooter.nth(i)).toBeVisible;
+                expect(currentContainer).toBe(footer.containersExpected[i]);
             }
         });
     });
