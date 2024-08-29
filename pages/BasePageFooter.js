@@ -4,6 +4,7 @@ export class BasePageFooter{
     // BasePageFooter classs represent the footer of the website
     constructor(page){
         this.page = page;
+        this.path = '/';
         // Mapping h5 headings in the footer
         this.h5Headings = page.locator('//footer//h5');
         this.h5Expected = [
@@ -32,6 +33,10 @@ export class BasePageFooter{
             '+359 44 611 123',
             'tourism.sliven@gmail.com',
         ]
+
+        // Social Networks Icons in Footer 
+        this.youtubeIconFooter = page.locator('//a[@class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-d9896f5"]');
+        this.facebookIconFooter = page.locator('//a[@class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-d46edd1"]');
 
     }
 

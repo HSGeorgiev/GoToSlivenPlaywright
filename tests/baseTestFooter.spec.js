@@ -165,5 +165,21 @@ describe("Footer tests", () => {
             expect(page.url()).toBe(goToSliven.baseUrl + '/contact-us/');
         });
 
+        test('Verify Youtube Link', async ({ page }) => {
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + footer.path);
+            const href = await footer.youtubeIconFooter.getAttribute('href');
+
+            expect(footer.youtubeIconFooter).toBeVisible;
+            expect(href).toBe('https://www.youtube.com/channel/UCmVir59F2H4aLwFpPK0l6sQ');
+           
+        });
+
+
+
+
+
     });
 });

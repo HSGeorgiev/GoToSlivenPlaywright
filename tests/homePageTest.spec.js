@@ -76,10 +76,7 @@ describe("e2e tests", () => {
                 //homePage.bookingSubmitButton.click()
                 nPage.click('//input[@class="b_submitButton"]') 
               ]);
-              
 
-            
-            
               // Wait for the new page to load
             await newPage.waitForLoadState();
 
