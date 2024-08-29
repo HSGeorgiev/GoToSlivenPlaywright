@@ -29,6 +29,23 @@ describe("Footer tests", () => {
         await context.close();
     });
 
+    describe("Verify h5 level headings in the footer", () => {
+
+        test('Check if headings are presented', async ({ page }) =>{
+    
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + '/');
+
+            for (let i = 0; i < footer.h5Expected.length; i++){
+                let currentHeading = await footer.h5Headings.nth(i).innerText();
+                expect(footer.h5Headings.nth(i)).toBeVisible;
+                expect(currentHeading).toBe(footer.h5Expected[i]);
+            }
+        });
+    });
+
     
     describe("Footer Targets Tests", () => {
 

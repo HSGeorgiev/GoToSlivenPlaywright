@@ -1,9 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 export class BasePageFooter{
-    
+    // BasePageFooter classs represent the footer of the website
     constructor(page){
         this.page = page;
+        // Mapping h5 headings in the footer
+        this.h5Headings = page.locator('//footer//h5');
+        this.h5Expected = [
+            'Quick Link',
+            'Information',
+            'Get In Touch'
+        ]
         // Mapping Links in Footer Element
         this.aboutLinkFooter = page.locator('//footer//a[contains(@href, "about-us")]');
         this.touristAttractionLinkFooter = page.locator('//footer//a[contains(@href, "tourist-attraction")]');
