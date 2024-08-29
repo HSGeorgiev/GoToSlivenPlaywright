@@ -177,7 +177,17 @@ describe("Footer tests", () => {
            
         });
 
+        test('Verify Facebook Link', async ({ page }) => {
+            const footer = new BasePageFooter(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + footer.path);
+            const href = await footer.facebookIconFooter.getAttribute('href');
 
+            expect(footer.facebookIconFooter).toBeVisible;
+            expect(href).toBe('https://www.facebook.com/tourism.sliven');
+           
+        });
 
 
 
