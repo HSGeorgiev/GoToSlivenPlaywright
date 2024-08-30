@@ -81,6 +81,19 @@ describe("Project Visual Identification tests", () => {
 
         });
 
+        
+        test('OPRR Logo is visible', async ({ page }) =>{
+    
+            const identification = new BasePageProjectIdentification(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + identification.path);
+            await identification.programOPRRLogo.scrollIntoViewIfNeeded();
+            
+            expect(identification.programOPRRLogo).toBeTruthy();
+
+        });
+
 
     });
 });
