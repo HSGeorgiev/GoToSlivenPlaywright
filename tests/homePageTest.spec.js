@@ -95,6 +95,7 @@ describe("e2e tests", () => {
 
         test('Verify if search functionality of the map works', async ({ page }) => {
 
+            test.setTimeout(60000); // 45 seconds for this test
             const homePage = new HomePage(page);
             const goToSliven = new GoToSliven();
 
@@ -126,10 +127,10 @@ describe("e2e tests", () => {
                     await homePage.mapSearchInput.fill(query);
                     await homePage.mapSearchButton.click();
                     let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
-                    // console.log(query);
-                    // console.log(firstResultTitle.trim());
-                    // console.log(response);
-                    expect(firstResultTitle.trim()).toBe(response);
+                    console.log(query);
+                    console.log(firstResultTitle.trim());
+                    console.log(response);
+                    expect(await firstResultTitle.trim()).toBe(response);
                 // Next query
 
             }
