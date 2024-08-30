@@ -41,7 +41,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.coatOfArmsSliven.scrollIntoViewIfNeeded();
             
-            expect(identification.coatOfArmsSliven).toBeTruthy();
+            expect(await identification.coatOfArmsSliven.isVisible()).toBeTruthy();
 
         });
 
@@ -53,7 +53,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.friendOfSlivenLogo.scrollIntoViewIfNeeded();
             
-            expect(identification.friendOfSlivenLogo).toBeTruthy();
+            expect(await identification.friendOfSlivenLogo.isVisible()).toBeTruthy();
 
         });
 
@@ -65,7 +65,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.fundEFRRLogo.scrollIntoViewIfNeeded();
             
-            expect(identification.fundEFRRLogo).toBeTruthy();
+            expect(await identification.fundEFRRLogo.isVisible()).toBeTruthy();
 
         });
 
@@ -77,7 +77,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.fundFUGLogo.scrollIntoViewIfNeeded();
             
-            expect(identification.fundFUGLogo).toBeTruthy();
+            expect(await identification.fundFUGLogo.isVisible()).toBeTruthy();
 
         });
 
@@ -90,7 +90,19 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.programOPRRLogo.scrollIntoViewIfNeeded();
             
-            expect(identification.programOPRRLogo).toBeTruthy();
+            expect(await identification.programOPRRLogo.isVisible()).toBeTruthy();
+
+        });
+
+        test('Fund Of Funds Logo is visible', async ({ page }) =>{
+    
+            const identification = new BasePageProjectIdentification(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + identification.path);
+            await identification.fundOfFundsLogo.scrollIntoViewIfNeeded();
+            
+            expect(await identification.fundOfFundsLogo.isVisible()).toBeTruthy();
 
         });
 
