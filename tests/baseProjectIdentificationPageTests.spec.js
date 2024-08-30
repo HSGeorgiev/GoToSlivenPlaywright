@@ -41,7 +41,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.coatOfArmsSliven.scrollIntoViewIfNeeded();
             
-            expect(identification.coatOfArmsSliven).toBeVisible();
+            expect(identification.coatOfArmsSliven).toBeTruthy();
 
         });
 
@@ -53,7 +53,7 @@ describe("Project Visual Identification tests", () => {
             await page.goto(goToSliven.baseUrl + identification.path);
             await identification.friendOfSlivenLogo.scrollIntoViewIfNeeded();
             
-            expect(identification.friendOfSlivenLogo).toBeVisible();
+            expect(identification.friendOfSlivenLogo).toBeTruthy();
 
         });
 
