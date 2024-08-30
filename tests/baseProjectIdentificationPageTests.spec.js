@@ -14,6 +14,7 @@ describe("Project Visual Identification tests", () => {
 
     beforeAll(async () => {
         browser = await chromium.launch();
+
     });
 
     afterAll(async () => {
@@ -32,7 +33,7 @@ describe("Project Visual Identification tests", () => {
 
     describe("Check for Logos Visability", () => {
 
-        test('Municipality Of Sliven Logo', async ({ page }) =>{
+        test('Municipality Of Sliven Logo is visible', async ({ page }) =>{
     
             const identification = new BasePageProjectIdentification(page);
             const goToSliven = new GoToSliven();
@@ -42,6 +43,17 @@ describe("Project Visual Identification tests", () => {
             
             expect(identification.coatOfArmsSliven).toBeVisible();
 
+        });
+
+        test('Friends of Sliven Logo is visible', async ({ page }) =>{
+    
+            const identification = new BasePageProjectIdentification(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + identification.path);
+            await identification.friendOfSlivenLogo.scrollIntoViewIfNeeded();
+            
+            expect(identification.friendOfSlivenLogo).toBeVisible();
 
         });
 
