@@ -20,6 +20,8 @@ export class BasePageProjectIdentification{
         this.programOPRRLogo = page.locator('//img[contains(@src, "Региони_В_Растеж")]');
         // Fund of Funds Logo
         this.fundOfFundsLogo = page.locator('//img[contains(@src, "Фонд_на_Фондовете")]');
+
+       
     }
 
 }
