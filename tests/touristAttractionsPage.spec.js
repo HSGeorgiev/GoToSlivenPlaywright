@@ -60,5 +60,28 @@ describe("Tourist Attractions Page e2e tests", () => {
 
         });
 
+        test('Tourist Attractions Page See More Butons Check', async ({ page }) => {
+
+            const touristAttractionsPage = new TouristAtractionsPage(page);
+            const goToSliven = new GoToSliven();
+
+            await page.goto(goToSliven.baseUrl + touristAttractionsPage.path);
+
+            const numberOfLinks = await touristAttractionsPage.expectedUrlTargets.length;
+
+            for (let i = 0; i < numberOfLinks; i++) {
+                await page.goto(goToSliven.baseUrl + touristAttractionsPage.path);
+                await touristAttractionsPage.seeMoreButtons.nth(i).click();
+                let currentUrl = page.url();
+                console.log(currentUrl);
+                console.log(touristAttractionsPage.expectedUrlTargets[i])
+                expect(currentUrl).toBe(goToSliven.baseUrl + 
+                    touristAttractionsPage.expectedUrlTargets[i]);
+            }
+      
+
+
+        });
+
     });
 });

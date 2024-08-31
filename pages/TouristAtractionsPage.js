@@ -13,8 +13,13 @@ export class TouristAtractionsPage{
             'LANDMARKS',
             'CULTURAL & HISTORICAL HERITAGE',
             'PARKS & PLACES FOR ENTERTAINMENT',
-        ]
-
+        ];
+        this.seeMoreButtons = page.locator('//span[@class="elementor-button-text"]');
+        this.expectedUrlTargets = [
+            '/landmarks-2/',
+            '/cultural-historical-heritage/',
+            '/parks-places-for-entertainment/',
+        ];
 
         
 
