@@ -33,6 +33,7 @@ describe("Tourist Attractions Page e2e tests", () => {
     describe("Tourist Attractions Page Elements Tests", () => {
 
         test('Tourist Attractions Page Title', async ({ page }) => {
+            // Verify if the page title is correct
 
             const touristAttractionsPage = new TouristAtractionsPage(page);
             const goToSliven = new GoToSliven();
@@ -43,6 +44,7 @@ describe("Tourist Attractions Page e2e tests", () => {
         });
 
         test('Tourist Attractions Page h2 Headings Check', async ({ page }) => {
+            // Verify if the main elements heading on the page are correct
 
             const touristAttractionsPage = new TouristAtractionsPage(page);
             const goToSliven = new GoToSliven();
@@ -61,13 +63,15 @@ describe("Tourist Attractions Page e2e tests", () => {
         });
 
         test('Tourist Attractions Page See More Butons Check', async ({ page }) => {
+            // Verify if the See more buttons on the main elements on the page 
+            // lead to the correct pages
 
             const touristAttractionsPage = new TouristAtractionsPage(page);
             const goToSliven = new GoToSliven();
 
             await page.goto(goToSliven.baseUrl + touristAttractionsPage.path);
 
-            const numberOfLinks = await touristAttractionsPage.expectedUrlTargets.length;
+            const numberOfLinks = touristAttractionsPage.expectedUrlTargets.length;
 
             for (let i = 0; i < numberOfLinks; i++) {
                 await page.goto(goToSliven.baseUrl + touristAttractionsPage.path);

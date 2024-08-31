@@ -6,5 +6,13 @@ export class GoToSliven{
 
         this.baseUrl = 'https://gotosliven.com';
 
+        this.pageUrls = [
+            {
+                title: 'GoToSliven.com',
+                url: 'https://gotosliven.com/',
+            },
+            
+        ]
+
     }
 }
