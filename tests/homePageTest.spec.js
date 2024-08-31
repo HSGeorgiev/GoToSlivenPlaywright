@@ -9,7 +9,8 @@ let page;
 
 
 
-describe("e2e tests", () => {
+describe("Home Page e2e tests", () => {
+    
     beforeAll(async () => {
         browser = await chromium.launch();
     });

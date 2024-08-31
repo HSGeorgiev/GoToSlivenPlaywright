@@ -8,8 +8,8 @@ export class TouristAtractionsPage{
         this.path = '/tourist-attractions/';
 
         // Slider
-        this.h2Headings = page.locator('//h2');
-        this,expectedH2Headings = [
+        this.h2Elements = page.locator('//h2');
+        this.expectedH2Elements = [
             'LANDMARKS',
             'CULTURAL & HISTORICAL HERITAGE',
             'PARKS & PLACES FOR ENTERTAINMENT',
