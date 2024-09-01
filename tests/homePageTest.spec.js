@@ -132,7 +132,7 @@ describe("Home Page e2e tests", () => {
                     console.log(firstResultTitle.trim());
                     console.log(response);
                     expect(await firstResultTitle.trim()).toBe(response);
-                // Next query
+                
 
             }
 
