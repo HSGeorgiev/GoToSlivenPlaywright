@@ -106,6 +106,19 @@ function checkVisualIdentificationElements(path) {
 
     });
 
+    // const goToSliven = new GoToSliven(); 
+
+    // let numberOfPages = goToSliven.getNumberOfPages();
+
+    // for (let i = 0; i < numberOfPages; i++) {
+    //     let currentPath = gotoSliven.sitePages[i].path;
+
+    //     checkVisualIdentificationElements(currentPath);
+
+    // }
+
+
+
 
 }
 
