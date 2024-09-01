@@ -10,7 +10,7 @@ export class GoToSliven{
         this.baseUrl = 'https://gotosliven.com';
 
         
-
+        // let this stay here for now, just in case...
         this.sitePages = [
             {
                 title: 'gotosliven Touristic Info Site – Touristic Info Site of Sliven. Sites, Places, Hotels, Restaurants, attraction in Sliven City',
