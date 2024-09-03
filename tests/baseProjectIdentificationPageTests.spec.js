@@ -197,6 +197,22 @@ function checkVisualIdentificationElements(path) {
 
         });
 
+        test('ProjectIdentification text should be present and be as expected', 
+            
+            async ({ page }) => {
+            
+            const identification = new BasePageProjectIdentification(page);
+            const goToSliven = new GoToSliven();
+            await page.goto(goToSliven.baseUrl + identification.path);
+
+            console.log(await identification.projectIdentificationText.innerText());
+
+            expect(await identification.projectIdentificationText.innerText()).
+                toBe(identification.identificationExpectedText);
+        })
+
+
+
 
     });
 });
