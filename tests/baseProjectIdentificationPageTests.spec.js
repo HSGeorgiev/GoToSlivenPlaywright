@@ -3,12 +3,9 @@ import { chromium } from 'playwright';
 import { GoToSliven } from '../Globals/GlobalConstants.js';
 import { BasePageProjectIdentification } from '../pages/BasePageProjectIdentification.js';
 
-
 let browser;
 let context;
 let page;
-
-
 
 describe("Project Visual Identification tests", () => {
 
@@ -32,6 +29,8 @@ describe("Project Visual Identification tests", () => {
     });
 
 function checkVisualIdentificationElements(path) {
+
+// Let this piece of codelay here for now while we have an decision about the structure of this tests
 
     test('Municipality Of Sliven Logo is visible', async ({ page }) =>{
     
@@ -105,6 +104,23 @@ function checkVisualIdentificationElements(path) {
         expect(await identification.fundOfFundsLogo.isVisible()).toBeTruthy();
 
     });
+
+    test('ProjectIdentification text should be present and be as expected', async ({ page }) => {
+        // Verify if the mandatory text about the project is present.
+        // TODO: this test should be performed for every single page!
+
+        const identification = new BasePageProjectIdentification(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + path);
+
+        console.log(await identification.projectIdentificationText.innerText());
+
+        expect(await identification.projectIdentificationText.innerText()).
+            toBe(identification.identificationExpectedText);
+    })
+
+
 
     // const goToSliven = new GoToSliven(); 
 
@@ -197,10 +213,9 @@ function checkVisualIdentificationElements(path) {
 
         });
 
-        test('ProjectIdentification text should be present and be as expected', 
-            
-            async ({ page }) => {
-            
+        test('ProjectIdentification text should be present and be as expected', async ({ page }) => {
+            // Verify if the mandatory text about the project is present.
+            // TODO: this test should be performed for every single page!
             const identification = new BasePageProjectIdentification(page);
             const goToSliven = new GoToSliven();
             await page.goto(goToSliven.baseUrl + identification.path);
