@@ -82,6 +82,18 @@ describe("Become Friend of Sliven Page e2e tests", () => {
 
         });
 
+        test('Become Friend of Sliven Card Back Page is visible', async ({ page }) =>{
+    
+            const friendsPage = new FriendOfSlivenPage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + friendsPage.path);
+            await friendsPage.becomeFriendOfSlivenCardBackPage.scrollIntoViewIfNeeded();
+            
+            expect(await friendsPage.becomeFriendOfSlivenCardBackPage.isVisible()).toBeTruthy();
+
+        });
+
       
     });
 });
