@@ -1,25 +1,27 @@
 import { test, expect } from '@playwright/test';
 
-export class TouFriendOfSlivenPageiFrienOfSlivenPagetAtractionsPage{
+export class FriendOfSlivenPage{
     
     constructor(page){
 
         this.page = page;
-        this.path = '/tourist-attractions/';
+        this.path = '/become-a-friend-of-sliven/';
 
-        // Slider
-        this.h2Elements = page.locator('//h2');
-        this.expectedH2Elements = [
-            'LANDMARKS',
-            'CULTURAL & HISTORICAL HERITAGE',
-            'PARKS & PLACES FOR ENTERTAINMENT',
+        this.h3Headings = page.locator('//h3');
+        this.h3ExpectedHeadingsTexts = [
+            '“Become a friend of Sliven” campaign',
+            'Objects included in the campaign "Become a friend of Sliven"',
         ];
-        this.seeMoreButtons = page.locator('//span[@class="elementor-button-text"]');
-        this.expectedUrlTargets = [
-            '/landmarks-2/',
-            '/cultural-historical-heritage/',
-            '/parks-places-for-entertainment/',
-        ];
+        this.objectsHeadingsLinks = page.locator('//div[@class="e-hotspot__label"]');
+        this.expectedObjectsHeadings = [
+            'Historical Museum',
+            'House-Museum "H.Dimitar"',
+            'House-Museum Of Popular Customs',
+            'Tuida Fortress',
+            'Museum Of Textile Industry',
+            
+        ]
+
 
         
 
