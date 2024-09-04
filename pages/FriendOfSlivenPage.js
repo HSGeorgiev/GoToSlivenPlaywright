@@ -27,6 +27,10 @@ export class FriendOfSlivenPage{
         ];
         this.becomeFriendOfSlivenLogo = page.locator('//img[@class="attachment-large size-large wp-image-4961"]');
 
+        
+        this.becomeFriendOfSlivenCardFrontPage = page.locator('//img[@class="attachment-large size-large wp-image-5866"]');
+        this.becomeFriendOfSlivenCardBackPage = page.locator('attachment-large size-large wp-image-5867');
+
 
 
     }
