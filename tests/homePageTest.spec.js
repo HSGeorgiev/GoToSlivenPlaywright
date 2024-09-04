@@ -94,50 +94,124 @@ describe("Home Page e2e tests", () => {
 
         });
 
-        test('Verify if search functionality of the map works', async ({ page }) => {
+       //
+       // The Map Serach Functionality test has been splited into 3 parts in attempt
+       // to prevent Playwright 'Slow Test' warning
+       //
 
-            test.setTimeout(60000); // 45 seconds for this test
-            const homePage = new HomePage(page);
-            const goToSliven = new GoToSliven();
+        describe("Map Search Fucrionality Splited Test", () => {
 
-            let queriesResponses = [
-                {
-                    query: 'Hadzhi Dimitar',
-                    response: 'Hadzhi Dimitar House-Museum'},
-                {
-                    query: 'Dobri Chintulov',
-                    response: 'Dobri Chintulov House-Museum'},   
-                {
-                    query: 'Kushbunar',
-                    response: 'Historical Place - Kushbunar'},   
-                {
-                    query: 'Kaloyanovo',
-                    response: 'Tomb - Kaloyanovo'},   
-                {
-                    query: 'Panayot Hitov',
-                    response: 'Panayot Hitov Monument'},                     
+            test('Verify if search functionality of the map works 1', async ({ page }) => {
+
+                test.setTimeout(60000); // 45 seconds for this test
+                const homePage = new HomePage(page);
+                const goToSliven = new GoToSliven();
+    
+                let queriesResponses = [
+                    {
+                        query: 'Hadzhi Dimitar',
+                        response: 'Hadzhi Dimitar House-Museum'},
+                    {
+                        query: 'Dobri Chintulov',
+                        response: 'Dobri Chintulov House-Museum'},                  
+                      
+                ];
+    
+                for (let i = 0; i < queriesResponses.length; i++) {
+    
+                    await page.goto(goToSliven.baseUrl + homePage.path);
+    
+                        let query = queriesResponses[i].query;
+                        let response = queriesResponses[i].response;
+                        await homePage.mapSearchInput.fill(query);
+                        await homePage.mapSearchButton.click();
+                        let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
+                        console.log(query);
+                        console.log(firstResultTitle.trim());
+                        console.log(response);
+                        expect(await firstResultTitle.trim()).toBe(response);
+                    
+    
+                }
+    
+    
+            });
+
+            test('Verify if search functionality of the map works 2', async ({ page }) => {
+
+                test.setTimeout(60000); // 45 seconds for this test
+                const homePage = new HomePage(page);
+                const goToSliven = new GoToSliven();
+    
+                let queriesResponses = [
+                      
+                    {
+                        query: 'Kushbunar',
+                        response: 'Historical Place - Kushbunar'},   
+                    {
+                        query: 'Kaloyanovo',
+                        response: 'Tomb - Kaloyanovo'},   
                   
-            ];
+                      
+                ];
+    
+                for (let i = 0; i < queriesResponses.length; i++) {
+    
+                    await page.goto(goToSliven.baseUrl + homePage.path);
+    
+                        let query = queriesResponses[i].query;
+                        let response = queriesResponses[i].response;
+                        await homePage.mapSearchInput.fill(query);
+                        await homePage.mapSearchButton.click();
+                        let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
+                        console.log(query);
+                        console.log(firstResultTitle.trim());
+                        console.log(response);
+                        expect(await firstResultTitle.trim()).toBe(response);
+                    
+    
+                }
+    
+    
+            });
 
-            for (let i = 0; i < queriesResponses.length; i++) {
+            test('Verify if search functionality of the map works 3', async ({ page }) => {
 
-                await page.goto(goToSliven.baseUrl + homePage.path);
+                test.setTimeout(60000); // 45 seconds for this test
+                const homePage = new HomePage(page);
+                const goToSliven = new GoToSliven();
+    
+                let queriesResponses = [
 
-                    let query = queriesResponses[i].query;
-                    let response = queriesResponses[i].response;
-                    await homePage.mapSearchInput.fill(query);
-                    await homePage.mapSearchButton.click();
-                    let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
-                    console.log(query);
-                    console.log(firstResultTitle.trim());
-                    console.log(response);
-                    expect(await firstResultTitle.trim()).toBe(response);
-                
-
-            }
-
+                    {
+                        query: 'Panayot Hitov',
+                        response: 'Panayot Hitov Monument'},                     
+                      
+                ];
+    
+                for (let i = 0; i < queriesResponses.length; i++) {
+    
+                    await page.goto(goToSliven.baseUrl + homePage.path);
+    
+                        let query = queriesResponses[i].query;
+                        let response = queriesResponses[i].response;
+                        await homePage.mapSearchInput.fill(query);
+                        await homePage.mapSearchButton.click();
+                        let firstResultTitle = await homePage.resultsMapSearch.first().textContent();
+                        console.log(query);
+                        console.log(firstResultTitle.trim());
+                        console.log(response);
+                        expect(await firstResultTitle.trim()).toBe(response);
+                    
+    
+                }
+    
+    
+            });
 
         });
+
+
 
     });
 });

@@ -31,6 +31,8 @@ export class HomePage{
         this.mapSearchButton = page.locator('//div[@class="eapps-google-maps-bar-search-location"]');
         // divs in the Map Search Results - it is a readOnlyCollection - we are going to extract element 
         // from it in the homePageTest class
+
+
         this.resultsMapSearch = page.locator('//div[@class="eapps-google-maps-bar-list-item-info-item eapps-google-maps-bar-list-item-info-title"]');
         
 
