@@ -19,14 +19,16 @@ export class FriendOfSlivenPage{
             'House-Museum Of Popular Customs',
             'Tuida Fortress',
             'Museum Of Textile Industry',
-            
-        ]
+            'Blue Stones Nature Park',
+            'Dobri Chintulov House-Museum',
+            'Dimitar Dobrovich Art Gallery​',
+            'Sirak Skitnik Hall',
+            'House Of Mirkovich Art Gallery',
+        ];
+        this.becomeFriendOfSlivenLogo = page.locator('//img[@class="attachment-large size-large wp-image-4961"]');
 
 
-        
 
-
-        
     }
 
 }
