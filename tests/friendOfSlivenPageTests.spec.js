@@ -42,7 +42,7 @@ describe("Become Friend of Sliven Page e2e tests", () => {
             expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
         });
 
-        test('Home Page H3 Headings Check', async ({ page }) => {
+        test('Become Friend Of Sliven Page H3 Headings Check', async ({ page }) => {
 
             const friendsPage = new FriendOfSlivenPage(page);
             const goToSliven = new GoToSliven();
@@ -55,6 +55,18 @@ describe("Become Friend of Sliven Page e2e tests", () => {
                 let currentText = await h3Elements.nth(i).innerText();
                 expect(currentText).toBe(friendsPage.h3ExpectedHeadingsTexts[i]);
             }
+
+        });
+
+        test('Become Friend of Sliven Logo is visible', async ({ page }) =>{
+    
+            const friendsPage = new FriendOfSlivenPage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + friendsPage.path);
+            await friendsPage.becomeFriendOfSlivenLogo.scrollIntoViewIfNeeded();
+            
+            expect(await friendsPage.becomeFriendOfSlivenLogo.isVisible()).toBeTruthy();
 
         });
 
