@@ -9,7 +9,7 @@ export class FriendOfSlivenPage{
 
         this.h3Headings = page.locator('//h3');
         this.h3ExpectedHeadingsTexts = [
-            '“Become a friend of Sliven” campaign',
+            '“Become A Friend Of Sliven” Campaign',
             'Objects included in the campaign "Become a friend of Sliven"',
         ];
         this.objectsHeadingsLinks = page.locator('//div[@class="e-hotspot__label"]');

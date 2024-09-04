@@ -42,7 +42,21 @@ describe("Become Friend of Sliven Page e2e tests", () => {
             expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
         });
 
+        test('Home Page H3 Headings Check', async ({ page }) => {
 
+            const friendsPage = new FriendOfSlivenPage(page);
+            const goToSliven = new GoToSliven();
+
+            await page.goto(goToSliven.baseUrl + friendsPage.path);
+            const h3Elements = await friendsPage.h3Headings;
+
+
+            for (var i = 0; i < friendsPage.h3ExpectedHeadingsTexts.length; i++) {
+                let currentText = await h3Elements.nth(i).innerText();
+                expect(currentText).toBe(friendsPage.h3ExpectedHeadingsTexts[i]);
+            }
+
+        });
 
       
     });
