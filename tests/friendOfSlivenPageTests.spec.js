@@ -70,6 +70,18 @@ describe("Become Friend of Sliven Page e2e tests", () => {
 
         });
 
+        test('Become Friend of Sliven Card Front Page is visible', async ({ page }) =>{
+    
+            const friendsPage = new FriendOfSlivenPage(page);
+            const goToSliven = new GoToSliven();
+``
+            await page.goto(goToSliven.baseUrl + friendsPage.path);
+            await friendsPage.becomeFriendOfSlivenCardFrontPage.scrollIntoViewIfNeeded();
+            
+            expect(await friendsPage.becomeFriendOfSlivenCardFrontPage.isVisible()).toBeTruthy();
+
+        });
+
       
     });
 });
