@@ -32,7 +32,17 @@ describe("Become Friend of Sliven Page e2e tests", () => {
 
     describe("Become Friend of Sliven Page Elements Tests", () => {
 
-       
+        test('Become Friend of Sliven Page Page Title', async ({ page }) => {
+
+            const friendsPage = new FriendOfSlivenPage(page);
+            const goToSliven = new GoToSliven();
+
+            await page.goto(goToSliven.baseUrl + friendsPage.path);
+            var title = await page.title();
+            expect(title).toBe("Become a friend of SLiven – gotosliven Touristic Info Site");
+        });
+
+
 
       
     });
