@@ -18,7 +18,7 @@ export class VideosPage{
             'House-Museum', 
             'Fortress', 
             'Textile Factory', 
-            'House-museum',
+            'House-Museum',
         ]
 
         this.videoNamesExpected = [

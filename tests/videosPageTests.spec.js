@@ -50,4 +50,25 @@ describe("Videos Page e2e tests", () => {
     // 2. A test to verify that the names of the videos are as expected;
     // 3. A test to verify that the 'video' buttons work as expected - eventually to chech if the links are corect.
     // BTW there are scripts on both english and bulgarian on the buttons - good to clear that...
+
+
+    test('Videos Page h3 Headings Check', async ({ page }) => {
+        // Verify if the videos heading on the page are correct
+
+        const videosPage = new VideosPage(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + videosPage.path);
+        const videosH2Headings = await videosPage.h3VideoHeadings;
+
+
+        for (var i = 0; i < videosPage.h3Expected.length; i++) {
+            let currentText = await videosH2Headings.nth(i).innerText();
+            console.log(currentText);
+            console.log(videosPage.h3Expected[i])
+            expect(currentText).toBe(videosPage.h3Expected[i]);
+        }
+
+    });
+
 });
