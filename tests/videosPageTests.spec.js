@@ -90,4 +90,25 @@ describe("Videos Page e2e tests", () => {
 
     });
 
+    test('Videos Buttons Texts Check', async ({ page }) => {
+        // Verify if the buttons texts are correct
+
+        const videosPage = new VideosPage(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + videosPage.path);
+        const buttons = await videosPage.videoButtons;
+        const buttonsCount = 6;
+        const buttonExpectedtext = 'video';
+
+
+        for (var i = 0; i < buttonsCount; i++) {
+            let currentText = await buttons.nth(i).innerText();
+            console.log(currentText);
+            const textMatches = currentText.match(buttonExpectedtext) || currentText.match('Видео');
+            expect(textMatches).toBeTruthy;
+        }
+
+    });
+
 });
