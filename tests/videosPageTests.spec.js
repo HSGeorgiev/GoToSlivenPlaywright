@@ -46,9 +46,10 @@ describe("Videos Page e2e tests", () => {
     });
 
     // TODO Here:
-    // 1. A test to verify that the h3 headings of the videos are as expected;
-    // 2. A test to verify that the names of the videos are as expected;
-    // 3. A test to verify that the 'video' buttons work as expected - eventually to chech if the links are corect.
+    // DONE 1. A test to verify that the h3 headings of the videos are as expected;
+    // DONE 2. A test to verify that the names of the videos are as expected;
+    // DONE 3. A test to verify that the 'video' buttons texts are as expected.
+    // 4. A test to verify that the 'video' buttons work as expected - eventually to chech if the links are corect.
     // BTW there are scripts on both english and bulgarian on the buttons - good to clear that...
 
 
