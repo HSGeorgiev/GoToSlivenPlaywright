@@ -90,6 +90,9 @@ describe("Videos Page e2e tests", () => {
 
     });
 
+    // THIS TEST IS JUST TEMPORARLY EXEPCING BOTH STRINGS AS BUTTON TEXT!
+    // THE BUTTONS TEXTS SHOULD BE CHANGED AND THE TEST SHOULD BE EDITED AS WELL
+
     test('Videos Buttons Texts Check', async ({ page }) => {
         // Verify if the buttons texts are correct
 
