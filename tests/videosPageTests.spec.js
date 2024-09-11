@@ -71,4 +71,23 @@ describe("Videos Page e2e tests", () => {
 
     });
 
+    test('Videos Objects Names Headings Check', async ({ page }) => {
+        // Verify if the Objects Names on the page are correct
+
+        const videosPage = new VideosPage(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + videosPage.path);
+        const videosObjectsNames = await videosPage.videoObjectsNames;
+
+
+        for (var i = 0; i < videosPage.videoNamesExpected.length; i++) {
+            let currentText = await videosObjectsNames.nth(i).innerText();
+            console.log(currentText);
+            console.log(videosPage.videoNamesExpected[i])
+            expect(currentText).toBe(videosPage.videoNamesExpected[i]);
+        }
+
+    });
+
 });
