@@ -30,7 +30,15 @@ describe("Virtual Walks Page e2e tests", () => {
     });
 
 
-   
+    test('Virtual Walks Page Page Title', async ({ page }) => {
+
+        const virtualWalksPage = new VirtualWalksPage(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + virtualWalksPage.path);
+        var title = await page.title();
+        expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
+    });
 
 
 
