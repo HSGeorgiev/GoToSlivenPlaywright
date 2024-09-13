@@ -40,8 +40,8 @@ describe("Virtual Walks Page e2e tests", () => {
         expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
     });
 
-    test('Videos Page h3 Headings Check', async ({ page }) => {
-        // Verify if the videos heading on the page are correct
+    test('Virtual Walks Page h2 Headings Check', async ({ page }) => {
+
 
         const virtualWalksPage = new VirtualWalksPage(page);
         const goToSliven = new GoToSliven();
