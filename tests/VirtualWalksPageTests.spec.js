@@ -40,6 +40,25 @@ describe("Virtual Walks Page e2e tests", () => {
         expect(title).toBe("360 Virtual Walk – gotosliven Touristic Info Site");
     });
 
+    test('Videos Page h3 Headings Check', async ({ page }) => {
+        // Verify if the videos heading on the page are correct
+
+        const virtualWalksPage = new VirtualWalksPage(page);
+        const goToSliven = new GoToSliven();
+
+        await page.goto(goToSliven.baseUrl + virtualWalksPage.path);
+        const walksH2Headings = await virtualWalksPage.h2ObjectsHeadings;
+
+
+        for (var i = 0; i < virtualWalksPage.h2ExpectedHeadings.length; i++) {
+            let currentText = await walksH2Headings.nth(i).innerText();
+            console.log(currentText);
+            console.log(virtualWalksPage.h2ExpectedHeadings[i])
+            expect(currentText).toBe(virtualWalksPage.h2ExpectedHeadings[i]);
+        }
+
+    });
+
 
 
       
