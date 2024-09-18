@@ -66,7 +66,24 @@ describe("3D Models Page e2e tests", () => {
 
         });
 
-        
+        test('Models Page Links Check', async ({ page }) => {
+            // Verify if the texts of the links inside models are as expected
+
+            const modelsPage = new ModelsPage(page);
+            const goToSliven = new GoToSliven();
+
+            await page.goto(goToSliven.baseUrl + modelsPage.path);
+            const modelsLinks = await modelsPage.modelsLinks;
+
+
+            for (var i = 0; i < modelsPage.expectedModelsLinksText.length; i++) {
+                let currentText = await modelsPage.modelsLinks.nth(i).innerText();
+                console.log(currentText);
+                //console.log(modelsPage.h2TitlesExpected[i])
+                expect(currentText).toBe(modelsPage.expectedModelsLinksText[i]);
+            }
+
+        });
 
        
 
