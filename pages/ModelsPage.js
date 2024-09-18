@@ -20,6 +20,24 @@ export class ModelsPage{
             'Historical Museum - Dr. Simeon Tabakov',
         ]
 
+        this.modelsLinks = page.locator('//div[@class="sketchfab-embed-wrapper"]//a');
+
+        this.expectedModelsLinksText = [
+            'Галерия - Добрович ', 
+            'd.ignatov ',
+            'Sketchfab',
+            'Къща Музей - Хаджи Димитър ', 
+            'd.ignatov ', 
+            'Sketchfab',
+            'Изложбена Зала - Сирак Скитник ',
+            'd.ignatov ',
+            'Sketchfab',
+            'Галерия Миркович ',
+            'd.ignatov ', 
+            'Sketchfab'
+        ]
+
+
     }
 
 
