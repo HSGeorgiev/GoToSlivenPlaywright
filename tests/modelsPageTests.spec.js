@@ -47,7 +47,26 @@ describe("3D Models Page e2e tests", () => {
 
 
 
-        
+        test('Models Page h2 Models Headings Check', async ({ page }) => {
+            // Verify if the models objects heading on the page are correct
+
+            const modelsPage = new ModelsPage(page);
+            const goToSliven = new GoToSliven();
+
+            await page.goto(goToSliven.baseUrl + modelsPage.path);
+            const h2ObjectsHeadings = await modelsPage.h2ModelsHeadings;
+
+
+            for (var i = 0; i < modelsPage.h2TitlesExpected.length; i++) {
+                let currentText = await h2ObjectsHeadings.nth(i).innerText();
+                console.log(currentText);
+                console.log(modelsPage.h2TitlesExpected[i])
+                expect(currentText).toBe(modelsPage.h2TitlesExpected[i]);
+            }
+
+        });
+
+       
 
     });
 });

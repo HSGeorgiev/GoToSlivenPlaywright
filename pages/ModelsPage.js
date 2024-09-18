@@ -17,7 +17,7 @@ export class ModelsPage{
             'Mirkovich Gallery', 
             'TICC - Blue Stones', 
             'House-Museum Dobri Chintulov',
-            'Historical Museum - dr. Simeon Tabakov',
+            'Historical Museum - Dr. Simeon Tabakov',
         ]
 
     }
